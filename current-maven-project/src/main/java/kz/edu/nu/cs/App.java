@@ -19,6 +19,8 @@ package kz.edu.nu.cs;
  * After building, navigate to <code>target/generated-sources/archetype</code>
  * and run <code>mvn install</code>. This will add the archetype to your local
  * maven repository.
+ * <p> 
+ * Add <code>.m2/archetype-catalog.xml</code> as a local catalog in eclipse 
  * 
  * @author marks1024
  *
