@@ -7,11 +7,13 @@ public class ObserverExample {
     public static void main(String[] args) {
         SensorListener o1 = new SensorListener("Listener 1");
         SensorListener o2 = new SensorListener("Listener 2");
+        SensorListener o3 = new SensorListener("Listener 3");
         
         SensorSubject sensor = new SensorSubject();
         
         sensor.addListener(o1);
         sensor.addListener(o2);
+        sensor.addListener(o3);
         
         Thread t = new Thread(new SensorEnvironment(sensor));
         t.start();
