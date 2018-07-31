@@ -2,6 +2,8 @@ package kz.edu.nu.cs.teaching;
 
 public class CompositeExample {
   public static void main(String[] args) {
+    
+    // (2 + 2) * (2 + (2 * 2))
     Multiplying x = new Multiplying(new Adding(new Vals(2.0), new Vals(2.0)),
         new Adding(new Vals(2.0), new Multiplying(new Vals(2.0), new Vals(2.0))));
     
