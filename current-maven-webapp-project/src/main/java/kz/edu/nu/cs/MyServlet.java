@@ -1,4 +1,4 @@
-package com.example.webapp;
+package kz.edu.nu.cs;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
