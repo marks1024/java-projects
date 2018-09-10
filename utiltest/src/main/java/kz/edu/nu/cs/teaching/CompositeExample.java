@@ -6,15 +6,18 @@ public class CompositeExample {
     // (2 + 2) * (2 + (2 * 2))
     // Multiplying x = new Multiplying(new Adding(new Vals(2.0), new Vals(2.0)),
     //    new Adding(new Vals(2.0), new Multiplying(new Vals(2.0), new Vals(2.0))));
-    
-    Adding x = new Adding(new Vals(3.0), new Vals(7.0));
+      
+    Term x = new Multiplying(new Adding(new Vals(2.0), new Vals(2.0)),
+        new Adding(new Vals(2.0), new Multiplying(new Vals(2.0), new Vals(2.0))));
     
     System.out.println(x.getValue());
+    System.out.println(x.getDepth());
   }
 }
 
 abstract class Term {
   public abstract double getValue();
+  public abstract int getDepth();
 }
 
 class Vals extends Term {
@@ -27,6 +30,10 @@ class Vals extends Term {
   public double getValue() {
     return myValue;
   }
+  
+  public int getDepth() {
+      return 0;
+  }
 }
 
 abstract class Opers extends Term {
@@ -36,6 +43,10 @@ abstract class Opers extends Term {
   public Opers(Term l, Term r) {
     this.leftVal = l;
     this.rightVal = r;
+  }
+  
+  public int getDepth() {
+      return 1 + Math.max(leftVal.getDepth(), rightVal.getDepth());
   }
 }
 
