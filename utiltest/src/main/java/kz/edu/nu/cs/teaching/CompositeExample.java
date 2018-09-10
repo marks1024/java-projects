@@ -4,8 +4,10 @@ public class CompositeExample {
   public static void main(String[] args) {
     
     // (2 + 2) * (2 + (2 * 2))
-    Multiplying x = new Multiplying(new Adding(new Vals(2.0), new Vals(2.0)),
-        new Adding(new Vals(2.0), new Multiplying(new Vals(2.0), new Vals(2.0))));
+    // Multiplying x = new Multiplying(new Adding(new Vals(2.0), new Vals(2.0)),
+    //    new Adding(new Vals(2.0), new Multiplying(new Vals(2.0), new Vals(2.0))));
+    
+    Adding x = new Adding(new Vals(3.0), new Vals(7.0));
     
     System.out.println(x.getValue());
   }
